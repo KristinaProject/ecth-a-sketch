@@ -13,6 +13,10 @@ h1 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.container {
+#container {
   background-color: white;
+  width: 700px;
+  height: 700px;
+  display: grid;
+  gap: 1px;
 }
