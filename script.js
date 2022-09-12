@@ -14,16 +14,30 @@ function createGrid(size) {
 
 const rangeValue = document.getElementById("sizeRange");
 const rangeShowValue = document.getElementById("valueDiv");
+function updateValue() {
+  rangeShowValue.innerText = rangeValue.value;
+}
 
 rangeValue.addEventListener("input", () => {
   createSizeGrid();
 });
 
 function createSizeGrid() {
-  rangeShowValue.innerText = rangeValue.value;
-
   container.innerHTML = null;
 
   const value = parseInt(rangeValue.value);
+  updateValue();
+
   createGrid(value);
 }
+
+const blackBtn = document.getElementById('black');
+const EraseBtn = document.getElementById('eraser');
+const colorBtn = document.getElementById('color');
+const allWhiteBtn = document.getElementById('eraseAll');
+
+allWhiteBtn.addEventListener('click', () => {
+  container.innerHTML = null;
+  rangeValue.value = 4;
+  updateValue();
+})
