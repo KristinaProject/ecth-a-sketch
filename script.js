@@ -8,14 +8,22 @@ function createGrid(size) {
   for (let i = 0; i < boardSize; i++) {
     const cell = document.createElement("div");
     container.append(cell);
-    cell.style.background = "red";
+    cell.style.backgroundColor = "red";
   }
 }
 
-const rangeValue = document.getElementById('sizeRange');
-const rangeShowValue = document.getElementById('valueDiv');
-function updateValue() {
-  return rangeShowValue.innerText = rangeValue.value;
-}
+const rangeValue = document.getElementById("sizeRange");
+const rangeShowValue = document.getElementById("valueDiv");
 
-rangeValue.addEventListener('input', () =>{updateValue()} );
+rangeValue.addEventListener("input", () => {
+  createSizeGrid();
+});
+
+function createSizeGrid() {
+  rangeShowValue.innerText = rangeValue.value;
+
+  container.innerHTML = null;
+
+  const value = parseInt(rangeValue.value);
+  createGrid(value);
+}
