@@ -12,3 +12,10 @@ function createGrid(size) {
   }
 }
 
+const rangeValue = document.getElementById('sizeRange');
+const rangeShowValue = document.getElementById('valueDiv');
+function updateValue() {
+  return rangeShowValue.innerText = rangeValue.value;
+}
+
+rangeValue.addEventListener('input', () =>{updateValue()} );
