@@ -60,3 +60,15 @@ input[type=range]::-moz-range-track {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   border-radius: 5px;
 }
+
+.black {
+  background-color: black;
+}
+
+.white {
+  background-color: white;
+}
+
+.red {
+  background-color: red;
+}
