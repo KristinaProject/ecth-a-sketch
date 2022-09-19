@@ -1,25 +1,9 @@
 const container = document.getElementById("container");
 const btns = document.getElementsByClassName("btn");
+const eraser = document.getElementById("eraser");
 const allWhiteBtn = document.getElementById("eraseAll");
 const rangeValue = document.getElementById("sizeRange");
 const rangeShowValue = document.getElementById("valueDiv");
-
-
-function getColor() {
-  Array.from(btns).forEach((element) => {
-    element.addEventListener('click', () => {
-      if(element.id === 'eraser') {
-        this.style.backgroundColor = 'white';
-      } else if(element.id === 'color'){
-        let randomColor = Math.floor(Math.random()*16777215).toString(16);
-        this.style.backgroundColor = `#${randomColor}`;
-      } else {
-        this.style.backgroundColor = 'black';
-      }
-    })
-  })
-}
-
 
 function createGrid(size) {
   const boardSize = size * size;
@@ -29,15 +13,14 @@ function createGrid(size) {
   for (let i = 0; i < boardSize; i++) {
     const cell = document.createElement("div");
     container.append(cell);
+
     cell.addEventListener("mouseover", () => {
-      getColor();
+      cell.style.backgroundColor = "black";
     });
   }
 }
 
 createGrid(4);
-
-
 
 function updateValue() {
   rangeShowValue.innerText = rangeValue.value;
