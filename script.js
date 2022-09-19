@@ -1,7 +1,5 @@
 const container = document.getElementById("container");
-const black = document.getElementById("black");
-const eraser = document.getElementById("eraser");
-const red = document.getElementById("red");
+const btns = document.getElementsByClassName('btns');
 const allWhiteBtn = document.getElementById("eraseAll");
 const rangeValue = document.getElementById("sizeRange");
 const rangeShowValue = document.getElementById("valueDiv");
@@ -15,28 +13,17 @@ function createGrid(size) {
     const cell = document.createElement("div");
     container.append(cell);
 
-    black.addEventListener("click", () => {
-      cell.addEventListener("mouseover", () => {
-        cell.classList.remove("white", "red");
-        cell.classList.add("black");
-      });
-    });
-
-    eraser.addEventListener("click", () => {
-      cell.addEventListener("mouseover", () => {
-        cell.classList.remove("black", "red");
-
-        cell.classList.add("white");
-      });
-    });
-
-    red.addEventListener("click", () => {
-      cell.addEventListener("mouseover", () => {
-        cell.classList.remove("white", "black");
-
-        cell.classList.add("red");
-      });
-    });
+    Array.from(btns).forEach((button) => {
+      button.addEventListener('click', () => {
+        cell.addEventListener('mouseover', () => {
+          cell.classList.remove('black', 'white', 'red');
+          if(button.id === 'eraser'){
+            cell.classList.add('white');
+          }
+          cell.classList.add(button.id);
+        })
+      })
+    })
   }
 }
 
