@@ -5,3 +5,5 @@
 It is a draw game you can choose grid large or small, choose color and mouse over on board. 
 
 I did this for learning purpose.
+
+You van play around in githubpages:  https://kristinaproject.github.io/ecth-a-sketch/
