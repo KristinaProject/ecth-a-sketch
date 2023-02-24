@@ -6,4 +6,4 @@ It is a draw game you can choose grid large or small, choose color and mouse ove
 
 I did this for learning purpose.
 
-You van play around in githubpages:  https://kristinaproject.github.io/ecth-a-sketch/
+You can play around in githubpages:  https://kristinaproject.github.io/ecth-a-sketch/
